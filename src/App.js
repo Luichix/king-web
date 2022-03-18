@@ -2,7 +2,6 @@ import React, { useContext } from 'react'
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom'
 import AuthContext from './context/AuthContext'
 import Header from './components/Header'
-import Sidenav from './components/Sidenav'
 import Main from './components/Main'
 import Login from './components/Login'
 import Dashboard from './components/Dashboard'
@@ -14,7 +13,6 @@ function App() {
     <Router>
       <div className="App">
         <Header></Header>
-        <Sidenav></Sidenav>
         <Routes>
           <Route path='/' element={<Main/>} exact/>
           <Route path='/login' element={<Login/>} />
