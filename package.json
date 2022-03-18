@@ -3,19 +3,26 @@
   "version": "0.1.0",
   "private": true,
   "dependencies": {
-    "@testing-library/jest-dom": "^5.16.2",
-    "@testing-library/react": "^12.1.4",
-    "@testing-library/user-event": "^13.5.0",
+    "@fortawesome/fontawesome-svg-core": "^6.1.0",
+    "@fortawesome/free-solid-svg-icons": "^6.1.0",
+    "@fortawesome/react-fontawesome": "^0.1.18",
+    "axios": "^0.26.1",
+    "eslint-plugin-jest": "^26.1.1",
+    "prop-types": "^15.8.1",
     "react": "^17.0.2",
+    "react-chatbot-kit": "^2.0.1",
     "react-dom": "^17.0.2",
     "react-scripts": "5.0.0",
+    "redux": "^4.1.2",
     "web-vitals": "^2.1.4"
   },
   "scripts": {
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test",
-    "eject": "react-scripts eject"
+    "eject": "react-scripts eject",
+    "server": "json-server -p3001 --watch db.json",
+    "eslint": "eslint . --fix"
   },
   "eslintConfig": {
     "extends": [
@@ -34,5 +41,14 @@
       "last 1 firefox version",
       "last 1 safari version"
     ]
-  }
+  },
+  "devDependencies": {
+    "@testing-library/jest-dom": "^5.16.2",
+    "@testing-library/react": "^12.1.4",
+    "@testing-library/user-event": "^13.5.0",
+    "cypress": "^9.5.2",
+    "deep-freeze": "^0.0.1",
+    "json-server": "^0.17.0"
+  },
+  "proxy": "http://localhost:3001"
 }
