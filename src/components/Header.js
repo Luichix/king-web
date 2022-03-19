@@ -1,8 +1,22 @@
-import React from 'react'
+import React, { useState } from 'react'
+import style from '../css/module/header.module.css'
+import { FaBars } from 'react-icons/fa'
+import Sydenav from './Sidenav'
 
 function Header() {
+  const [nav, setNav] = useState(false)
+
+  const handleNav= () => {
+    if(nav)setNav(false)
+    else setNav(true)
+  }
+
   return (
-    <div>Header</div>
+    <header id='header' className={style.header}>
+      <h1 className={style.title} >Delicias de Quesos El Rey</h1>
+      <span className={style.bar} onClick={handleNav} ><FaBars/></span>
+      <Sydenav nav={nav}></Sydenav>
+    </header>
   )
 }
 

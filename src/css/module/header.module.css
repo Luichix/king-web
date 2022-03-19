@@ -1,0 +1,29 @@
+@import '../App.css';
+
+.header {
+  background-color: var(--color-black);
+  color: var(--color-white);
+  display: flex;
+  position: sticky;
+  align-items: center;
+  justify-content: center;
+  left: 0;
+  top: 0;
+  width: 100%;
+  padding: 0.2em 0;
+  z-index: 100;
+}
+
+.title {
+  text-align: center;
+  font-size: var(--text-max);
+}
+
+.bar {
+  font-size: var(--text-max);
+  position: absolute;
+  display: flex;
+  cursor: pointer;
+  right: var(--text-max);
+}
+

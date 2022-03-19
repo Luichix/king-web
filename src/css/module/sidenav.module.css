@@ -1,0 +1,51 @@
+@import '../App.css';
+
+.sidenav {
+  background-color: var(--color-black);
+  position: fixed;
+  display:flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 0 2em;
+  width: auto;
+  left: 0;
+  top: 0;
+  height: 100%;
+  transition: 1s;
+}
+
+.none {
+  background-color: var(--color-white);
+  position: fixed;
+  display:flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 0 2em;
+  width: auto;
+  left: -500px;
+  top: 0;
+  height: 100%;
+  transition: 2s;
+}
+
+
+.item {
+  text-decoration: none;
+  color: var(--color-blue);
+  margin: var(--text-max);
+  padding: 0.2em 0.5em;
+  font-size: var(--text-max);
+  font-weight: 700;
+  cursor: pointer;
+}
+
+.item:hover {
+  color: var(--color-white);
+}
+
+.active {
+  color: var(--color-white);
+  transition: 0.5s;
+}
