@@ -21,7 +21,29 @@ const Main = () => {
         <h2 className={style.title}>Galería</h2>
       </section>
       <section id='Contacto' className={style.section}>
-        <h2 className={style.title}>Contacto</h2>
+        <h2 className={style.title}>¡Estaremos encantados con sus comentarios!</h2>
+        <form>
+          <fieldset>
+            <label>Nombre y Apellido</label>
+            <input/>
+            <label>Correo</label>
+            <input/>
+            <label>Lugar de Residencia</label>
+            <input/>
+          </fieldset>
+          <fieldset>
+            <label>Mensaje</label>
+            <textarea/>
+          </fieldset>
+          <button>Enviar</button>
+        </form>
+        <hr></hr>
+        {data.contact.map((e,i) => (
+          <span key={i}>
+            <h3>{e[0]}</h3>
+            <p>{e[1]}</p>
+          </span>
+        ))}
       </section>
     </main>
   )
