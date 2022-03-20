@@ -1,6 +1,8 @@
 import React, { useState } from 'react'
 import style from '../css/module/header.module.css'
 import { FaBars } from 'react-icons/fa'
+import { VscChromeClose } from 'react-icons/vsc'
+
 import Sydenav from './Sidenav'
 
 function Header() {
@@ -14,7 +16,7 @@ function Header() {
   return (
     <header id='header' className={style.header}>
       <h1 className={style.title} >Delicias de Quesos El Rey</h1>
-      <span className={style.bar} onClick={handleNav} ><FaBars/></span>
+      <span className={style.bar} onClick={handleNav} >{nav ? <VscChromeClose/> : <FaBars/>}</span>
       <Sydenav nav={nav}></Sydenav>
     </header>
   )

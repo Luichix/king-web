@@ -1,8 +1,12 @@
 :root {
   --color-white: #fff;
+  --color-gray: #f5f5f5;
   --color-blue: #286394;
   --color-black: #000;
-  --color-red: #990500;
+  --color-orange: #c9580d;
+  --color-yellow: #f1aa0e;
+  --color-red: #b10c00;
   --text-min: 1em;
+  --text-mid: 1.25em;
   --text-max: 1.25em;
 }

@@ -1,19 +1,14 @@
 import React from 'react'
 import style from '../css/module/main.module.css'
 import data from '../data/info'
+import History from './History'
+import Home from './Home'
 
 const Main = () => {
   return (
     <main id='main' className={style.main} >
-      <section id='Inicio' className={style.section}>
-        <h2 className={style.title}>Inicio</h2>
-      </section>
-      <section id='Historia' className={style.section}>
-        <h2 className={style.title}>Nuestra Historia</h2>
-        {data.history.map((e, i) => (
-          <p key={i} className={style.data} >{e}</p>
-        ))}
-      </section>
+      <Home/>
+      <History data={data} />
       <section id='Catálogo' className={style.section}>
         <h2 className={style.title}>Catálogo</h2>
       </section>
