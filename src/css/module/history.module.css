@@ -1,6 +1,6 @@
 @import '../App.css';
 
-.history {
+.section {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(350px,1fr));
   grid-template-rows: repeat(auto-fit, minmax(350px,1fr));
@@ -28,7 +28,7 @@
   box-shadow: 6px 6px 6px #0004;
 }
 
-.info {
+.history {
   background-color: var(--color-white);
   margin: 1em;
   padding: 1em;
