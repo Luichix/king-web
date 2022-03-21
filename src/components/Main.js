@@ -10,7 +10,7 @@ import Contact from './Contact'
 const Main = () => {
   return (
     <main id='main' className={style.main} >
-      <Home/>
+      <Home data={data.home} />
       <History data={data} />
       <Catalogue />
       <Gallery/>

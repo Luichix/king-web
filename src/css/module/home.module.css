@@ -1,6 +1,7 @@
 @import '../App.css';
 
 .section {
+  position: relative;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -12,6 +13,107 @@
   object-fit: cover;
   position: relative;
   min-height: 100%;
-  opacity: 0.4;
-  filter: brightness(1) contrast(1.5) saturate(1) sepia(0.5);
+  opacity: 1;
+  filter:opacity(0.3) brightness(1) contrast(1);
+  z-index: 0;
+  box-shadow: 0px 8px 6px #0008;
+}
+.section::before {
+  content: '';
+  position:absolute;
+  background-color: var(--color-white);
+  min-height: 100%;
+  min-width: 100%;
+}
+
+.note {
+  color: var(--color-primary);
+  background-color: var(--color-yellow);
+  position: absolute;
+  text-align: center;
+  padding: 0.5em 0;
+  width: 100%;
+  font-weight: 700;
+  top: 0;
+}
+
+.welcome {
+  color: var(--color-secundary);
+  position: absolute;
+  display: flex;
+  flex-direction: column;
+  justify-content:center;
+  width: 100%;
+  height: 100%;
+  z-index: 4;
+}
+
+.store {
+  padding: 3em;
+}
+
+.link{
+  text-decoration: none;
+  color: var(--color-primary);
+  background-color: var(--color-secundary) ;
+  border: 1px solid var(--color-primary);
+  padding: 1em;
+  border-radius: 5%;
+  font-size: var(--text-mid);
+}
+
+.link:hover{
+  color: var(--color-yellow);
+  background-color: var(--color-primary);
+  box-shadow: 0px 0px 6px #0008;
+}
+
+.list {
+  background-color: var(--color-primary);
+  position: relative;
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  align-self: center;
+  flex-wrap: wrap;
+  width: 80vw;
+  padding: 0;
+  margin-top: 2em;
+  border-radius: 5%;
+  box-shadow: 6px 6px 6px #0004;
+}
+
+.group{
+  font-size: var(--text-min);
+  padding: var(--text-min);
+  list-style: none;
+  display: flex;
+  align-items: center;
+}
+
+.icons {
+  font-size: var(--text-big);
+  padding: 0 0.2em;
+  color: var(--color-yellow);
+}
+
+.item{
+  display: flex;
+  flex-direction: column;
+}
+.title {
+  font-size: var(--text-big);
+  line-height: 0;
+}
+.comment {
+  font-size: var(--text-min);
+  font-size: var(--text-bot);
+  align-self: center;
+  width: 75%;
+  font-weight: 600;
+  line-height: 2em;
+}
+
+.text {
+  font-size: var(--text-min);
 }
