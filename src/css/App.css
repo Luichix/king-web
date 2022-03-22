@@ -2,7 +2,7 @@
   --color-primary: #ffffff;
   --color-secundary: #3b3b37;
   --color-white: #ffffff;
-  --color-gray: #f5f5f5;
+  --color-gray: #d1d0d0;
   --color-blue: #286394;
   --color-black: #000;
   --color-orange: #c9580d;
@@ -12,5 +12,6 @@
   --text-bot: 1.1em;
   --text-mid: 1.25em;
   --text-max: 1.5em;
+  --text-top: 2em;
   --text-big: 3em;
 }

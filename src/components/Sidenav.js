@@ -2,8 +2,9 @@ import React from 'react'
 import style from '../css/module/sidenav.module.css'
 import { Link as Nav } from 'react-scroll'
 import logo from '../assets/logo.png'
+import Social from './Social'
 
-const elements = ['Inicio','Historia','Catálogo','Galería','Contacto' ]
+const elements = ['Inicio','Nosotros','Productos','Contacto' ]
 
 const Sidenav = ({ nav }) => {
   return (
@@ -21,6 +22,9 @@ const Sidenav = ({ nav }) => {
           duration={1500}
         ><span>{e}</span></Nav>
       ))}
+      <span className={style.social}>
+        <Social/>
+      </span>
     </div>
   )
 }

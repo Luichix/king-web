@@ -13,4 +13,5 @@
   font-size: var(--text-max);
   margin: 0;
   color: var(--color-orange);
+  text-align: center;
 }

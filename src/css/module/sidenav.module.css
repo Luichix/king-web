@@ -58,3 +58,13 @@
   border-radius: 5%;
   transition: 0.5s;
 }
+
+.social {
+  position: absolute;
+  bottom: 2em;
+}
+
+/* .social::after {
+  position: relative;
+  content: '';
+} */
