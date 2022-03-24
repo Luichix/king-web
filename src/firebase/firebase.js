@@ -1,6 +1,7 @@
 // Import the functions you need from the SDKs you need
 import { initializeApp } from 'firebase/app'
 import { getAnalytics } from 'firebase/analytics'
+import { getDatabase } from 'firebase/database'
 // TODO: Add SDKs for Firebase products that you want to use
 // https://firebase.google.com/docs/web/setup#available-libraries
 
@@ -9,6 +10,7 @@ import { getAnalytics } from 'firebase/analytics'
 const firebaseConfig = {
   apiKey: 'AIzaSyC-AxmjEyoAvrs0I-OjQnGvCf-H7aiYfkc',
   authDomain: 'king-client.firebaseapp.com',
+  databaseURL: 'https://king-client-default-rtdb.firebaseio.com',
   projectId: 'king-client',
   storageBucket: 'king-client.appspot.com',
   messagingSenderId: '456285720702',
@@ -19,5 +21,6 @@ const firebaseConfig = {
 // Initialize Firebase
 const app = initializeApp(firebaseConfig)
 const analytics = getAnalytics(app)
+const database = getDatabase(app)
 
-export { analytics }
+export { analytics, database }
