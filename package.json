@@ -23,7 +23,9 @@
     "test": "react-scripts test",
     "eject": "react-scripts eject",
     "server": "json-server -p3001 --watch db.json",
-    "eslint": "eslint . --fix"
+    "eslint": "eslint . --fix",
+    "saved": "git add . && git commit -m build && git push origin main",
+    "deploy": "npm run build && firebase deploy --only hosting"
   },
   "eslintConfig": {
     "extends": [
