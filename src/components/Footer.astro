@@ -30,16 +30,24 @@
     <div class="footer-section">
       <h3>Síguenos</h3>
       <div class="social-links">
-        <a href="#" class="social-icon"><i class="fab fa-facebook-f"></i></a>
-        <a href="#" class="social-icon"><i class="fab fa-twitter"></i></a>
-        <a href="#" class="social-icon"><i class="fab fa-instagram"></i></a>
+        <a href="https://www.facebook.com/Delquesoselrey" class="social-icon"
+          ><img src="facebook.svg" /></a
+        >
+        <a href="https://www.instagram.com/delquesoselrey" class="social-icon"
+          ><img src="instagram.svg" /></a
+        >
+        <a
+          href="https://wa.me/13056102453?text=Hola,%20te%20contacto%20desde%20su%20sitio%20web"
+          class="social-icon"><img src="whatsapp.svg" /></a
+        >
       </div>
     </div>
   </div>
-  <div class="footer-bottom">
-    <p>&copy; 2025 Quesos El Rey LLC. Todos los derechos reservados.</p>
-  </div>
 </section>
+
+<div class="footer-bottom">
+  <p>&copy; 2025 Quesos El Rey LLC. Todos los derechos reservados.</p>
+</div>
 
 <style>
   /* Estilos generales del Footer */
@@ -112,14 +120,21 @@
   /* Redes sociales */
   .social-links {
     display: flex;
+    justify-content: center;
     gap: 15px;
   }
 
   .social-icon {
     color: #fff;
     font-size: 1.5rem;
+
     text-decoration: none;
     transition: color 0.3s ease;
+  }
+
+  .social-icon img {
+    width: 20px;
+    height: 20px;
   }
 
   .social-icon:hover {
