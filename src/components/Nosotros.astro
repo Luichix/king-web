@@ -1,0 +1,261 @@
+---
+
+---
+
+<section class="about-us" id="nosotros">
+  <div class="about-content">
+    <h2>Nuestra Historia</h2>
+    <p>
+      Delicias de <strong> Quesos El Rey</strong> nació en 1992 en Chinandega, Nicaragua,
+      con el sueño de ofrecer quesos artesanales de la mejor calidad, elaborados
+      con ingredientes locales y frescos.
+    </p>
+
+    <p>
+      Más de 30 años después, nuestros quesos siguen siendo un símbolo de
+      tradición en la comunidad, llegando a hogares alrededor del mundo y
+      llevando el auténtico sabor de Nicaragua a todas partes.
+    </p>
+
+    <a href="#contacto" class="btn-primary">Contáctanos</a>
+  </div>
+  <div>
+    <div class="carrusel">
+      <button class="carrusel-btn prev" aria-label="Imagen anterior">
+        &#10094;</button
+      >
+      <div class="carrusel-contenedor">
+        <img src="about-us(1).jpg" alt="Foto de los inicios de Quesos El Rey" />
+        <img src="about-us(2).jpg" alt="Producción artesanal de quesos" />
+        <img src="about-us(3).jpg" alt="Equipo de trabajo en Chinandega" />
+        <img src="about-us(4).jpg" alt="Equipo de trabajo en Chinandega" />
+      </div>
+      <button class="carrusel-btn next" aria-label="Imagen siguiente">
+        &#10095;</button
+      >
+    </div>
+
+    <!-- Indicadores -->
+    <div class="carrusel-indicadores">
+      <button class="active" aria-label="Ir a la imagen 1"></button>
+      <button aria-label="Ir a la imagen 2"></button>
+      <button aria-label="Ir a la imagen 3"></button>
+      <button aria-label="Ir a la imagen 3"></button>
+    </div>
+  </div>
+</section>
+
+<script>
+  let indice: number = 0;
+
+  /**
+   * Mueve el carrusel a la siguiente o anterior imagen.
+   * @param direccion - Número que indica la dirección (1 para siguiente, -1 para anterior).
+   */
+  export function moverCarrusel(direccion: number): void {
+    const carrusel = document.querySelector(
+      '.carrusel-contenedor'
+    ) as HTMLElement;
+    const indicadores = document.querySelectorAll<HTMLButtonElement>(
+      '.carrusel-indicadores button'
+    );
+
+    if (!carrusel) return;
+
+    const total = carrusel.children.length;
+
+    // Calcular el nuevo índice, asegurándonos de mantenerlo dentro de los límites
+    indice = (indice + direccion + total) % total;
+
+    // Actualizar la posición del carrusel
+    carrusel.style.transform = `translateX(-${indice * 100}%)`;
+
+    // Actualizar los indicadores activos
+    indicadores.forEach((btn, i) => {
+      btn.classList.toggle('active', i === indice);
+    });
+  }
+
+  /**
+   * Inicializa el carrusel asignando eventos a los botones e indicadores.
+   */
+  export function inicializarCarrusel(): void {
+    const prevButton = document.querySelector(
+      '.carrusel-btn.prev'
+    ) as HTMLButtonElement;
+    const nextButton = document.querySelector(
+      '.carrusel-btn.next'
+    ) as HTMLButtonElement;
+    const indicadores = document.querySelectorAll<HTMLButtonElement>(
+      '.carrusel-indicadores button'
+    );
+
+    if (!prevButton || !nextButton || indicadores.length === 0) {
+      console.error('Carrusel o botones no encontrados.');
+      return;
+    }
+
+    // Asignar eventos a los botones de navegación
+    prevButton.addEventListener('click', () => moverCarrusel(-1));
+    nextButton.addEventListener('click', () => moverCarrusel(1));
+
+    // Asignar eventos a los indicadores
+    indicadores.forEach((indicador, i) => {
+      indicador.addEventListener('click', () => {
+        moverCarrusel(i - indice); // Mueve el carrusel directamente a la imagen seleccionada
+      });
+    });
+  }
+
+  // Ejecutar al cargar la página
+  document.addEventListener('DOMContentLoaded', () => {
+    inicializarCarrusel();
+  });
+</script>
+<style>
+  /* Sobre Nosotros Section */
+  .about-us {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 50px 15%;
+
+    background-color: #fffdfa;
+    gap: 20px;
+    min-height: 100vh;
+  }
+
+  .about-content {
+    max-width: 50%;
+  }
+
+  .about-content h2 {
+    font-size: 2.5rem;
+    color: #2d3748;
+    margin-bottom: 20px;
+  }
+
+  .about-content p {
+    font-size: 1.2rem;
+    color: #4a5568;
+    line-height: 1.6;
+    margin-bottom: 20px;
+  }
+
+  .about-content .btn-primary {
+    background-color: #3182ce;
+    color: white;
+    text-decoration: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    font-size: 1rem;
+    transition: background-color 0.3s ease;
+  }
+
+  .about-content .btn-primary:hover {
+    background-color: #2b6cb0;
+  }
+
+  .about-image {
+    max-width: 40%;
+  }
+
+  .about-image img {
+    width: 100%;
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  }
+
+  /* Estilos del carrusel */
+  .carrusel {
+    position: relative;
+    max-width: 600px;
+    margin: 20px auto;
+    overflow: hidden;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+    background-color: #f7fafc; /* Fondo claro */
+  }
+
+  .carrusel-contenedor {
+    display: flex;
+    transition: transform 0.5s ease-in-out;
+  }
+
+  .carrusel-contenedor img {
+    min-width: 100%;
+    height: auto;
+    border-radius: 10px; /* Redondear las esquinas de las imágenes */
+    filter: sepia(0.5);
+  }
+
+  /* Botones del carrusel */
+  .carrusel-btn {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background-color: rgba(0, 0, 0, 0.5);
+    color: white;
+    border: none;
+    font-size: 18px;
+    cursor: pointer;
+    padding: 10px;
+    z-index: 10;
+    border-radius: 20%; /* Botones redondeados */
+  }
+
+  .carrusel-btn:hover {
+    background-color: rgba(0, 0, 0, 0.8);
+  }
+
+  .carrusel-btn.prev {
+    left: 10px;
+  }
+
+  .carrusel-btn.next {
+    right: 10px;
+  }
+
+  /* Indicadores del carrusel */
+  .carrusel-indicadores {
+    display: flex;
+    justify-content: center;
+    margin-top: 10px;
+    gap: 10px; /* Espacio entre indicadores */
+  }
+
+  .carrusel-indicadores button {
+    background-color: #cbd5e0; /* Gris claro */
+    border: none;
+    width: 16px;
+    height: 8px;
+    border-radius: 20%;
+    cursor: pointer;
+    transition:
+      background-color 0.3s ease,
+      transform 0.3s ease;
+  }
+
+  .carrusel-indicadores button:hover {
+    background-color: #a0aec0; /* Gris más oscuro al pasar el cursor */
+    transform: scale(1.1); /* Agrandar ligeramente */
+  }
+
+  .carrusel-indicadores button.active {
+    background-color: #3182ce; /* Azul activo */
+    transform: scale(1.1); /* Más grande cuando está activo */
+    box-shadow: 0 0 6px rgba(49, 130, 206, 0.8); /* Efecto de resplandor azul */
+  }
+
+  /* Responsividad */
+  @media (max-width: 768px) {
+    .carrusel-btn {
+      font-size: 14px;
+      padding: 8px;
+    }
+
+    .carrusel-contenedor img {
+      border-radius: 5px;
+    }
+  }
+</style>

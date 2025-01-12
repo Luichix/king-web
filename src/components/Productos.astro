@@ -1,0 +1,131 @@
+<section class="featured-products" id="productos">
+  <div class="section-header">
+    <h2>Nuestros Quesos, El Verdadero Sabor de Nicaragua</h2>
+    <p>
+      Cada uno de nuestros quesos es elaborado con dedicación y amor, utilizando
+      recetas tradicionales que han pasado de generación en generación. Desde el
+      queso fresco hasta el queso añejo, nuestros productos son perfectos para
+      cualquier ocasión.
+    </p>
+  </div>
+  <div class="product-gallery">
+    <div class="product-card">
+      <img src="cheese(1).jpg" alt="Queso Palmito" />
+      <h3>Queso Palmito</h3>
+      <p>
+        Un queso ahumado, suave y granulado que se derrite fácilmente. Su sabor
+        delicado y textura deliciosa lo convierten en el complemento perfecto
+        para tus platillos favoritos.
+      </p>
+
+      <a href="#" class="btn-details">Ver más</a>
+    </div>
+    <div class="product-card">
+      <img src="cheese(2).jpg" alt="Queso Asado" />
+      <h3>Queso Asado</h3>
+      <p>
+        Cocinado a la plancha, este queso destaca por su textura compacta y su
+        irresistible aroma al calentarse. Es ideal para compartir en reuniones
+        familiares.
+      </p>
+      <a href="#" class="btn-details">Ver más</a>
+    </div>
+    <div class="product-card">
+      <img src="cheese(3).jpg" alt="Queso Enmantado" />
+      <h3>Queso Enmantado</h3>
+      <p>
+        Queso ahumado de sabor intenso y ligeramente salado, con una textura
+        compacta y su característico color amarillo-marrón, ideal para disfrutar
+        en cualquier ocasión.
+      </p>
+
+      <a href="#" class="btn-details">Ver más</a>
+    </div>
+  </div>
+</section>
+
+<style>
+  /* Productos Destacados Section */
+  .featured-products {
+    padding: 50px 15%;
+    background-color: #f7fafc;
+    text-align: center;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .section-header h2 {
+    font-size: 2.5rem;
+    color: #2d3748;
+    margin-bottom: 10px;
+  }
+
+  .section-header p {
+    font-size: 1.2rem;
+    color: #4a5568;
+    margin-bottom: 40px;
+    line-height: 1.6;
+  }
+
+  .product-gallery {
+    display: flex;
+    /* flex-wrap: wrap; */
+    /* justify-content: center; */
+    width: 100%;
+    justify-content: space-between;
+    gap: 30px;
+  }
+
+  .product-card {
+    background: white;
+    border: 1px solid #e2e8f0;
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    width: 300px;
+    padding: 40px;
+    text-align: center;
+    transition:
+      transform 0.3s ease,
+      box-shadow 0.3s ease;
+  }
+
+  .product-card img {
+    width: 100%;
+    border-radius: 10px;
+    margin-bottom: 20px;
+  }
+
+  .product-card h3 {
+    font-size: 1.5rem;
+    color: #2d3748;
+    margin-bottom: 10px;
+  }
+
+  .product-card p {
+    font-size: 1.1rem;
+    line-height: 1.5;
+    color: #4a5568;
+    margin-bottom: 20px;
+  }
+
+  .product-card .btn-details {
+    background-color: #3182ce;
+    color: white;
+    text-decoration: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    font-size: 1rem;
+    transition: background-color 0.3s ease;
+  }
+
+  .product-card .btn-details:hover {
+    background-color: #2b6cb0;
+  }
+
+  .product-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 12px rgba(0, 0, 0, 0.15);
+  }
+</style>

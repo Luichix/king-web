@@ -1,0 +1,183 @@
+---
+
+---
+
+<nav class="navbar">
+  <div class="navbar-content">
+    <div class="navbar-brand"><img src="logo.png" width="140px" /></div>
+    <ul class="navbar-menu">
+      <li><a href="#inicio">Inicio</a></li>
+      <li><a href="#nosotros">Nosotros</a></li>
+      <li><a href="#productos">Productos</a></li>
+      <li><a href="#contacto">Contacto</a></li>
+    </ul>
+  </div>
+  <div class="menu-toggle" aria-label="Abrir menú">
+    <span></span>
+    <span></span>
+    <span></span>
+  </div>
+</nav>
+
+<script>
+  // Seleccionar elementos del DOM
+  const hamburger = document.querySelector('.menu-toggle');
+  const navLinks = document.querySelector('.nav-links');
+  let isMenuOpen = false;
+
+  // Función para alternar el menú
+  function toggleMenu() {
+    isMenuOpen = !isMenuOpen;
+
+    if (hamburger) {
+      if (isMenuOpen) {
+        hamburger.classList.add('open');
+
+        if (navLinks) {
+          navLinks.classList.add('active'); // Abre el menú
+        }
+      } else {
+        hamburger.classList.remove('open');
+        if (navLinks) {
+          navLinks.classList.remove('active'); // Cierra el menú
+        }
+      }
+    }
+  }
+
+  // Asignar evento al ícono de hamburguesa
+  if (hamburger) {
+    hamburger.addEventListener('click', toggleMenu);
+  }
+</script>
+
+<style>
+  /* General Navbar Styles */
+  .navbar {
+    position: fixed;
+    width: 100%;
+    z-index: 1000;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    background-color: white;
+  }
+
+  .navbar-content {
+    padding: 10px 15%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  .navbar-brand {
+    font-size: 1.8em;
+    font-weight: bold;
+  }
+
+  .navbar-menu {
+    display: flex;
+    gap: 20px;
+    transition:
+      transform 0.4s ease,
+      opacity 0.4s ease; /* Smooth transition */
+    opacity: 1;
+    transform: translateY(0);
+    list-style: none;
+  }
+
+  .navbar-menu li {
+    display: inline-block;
+  }
+  .navbar-menu a {
+    color: rgb(60, 57, 57);
+    text-decoration: none;
+    font-size: 1.25rem;
+    padding: 10px 15px;
+    border-radius: 5px;
+    transition:
+      background-color 0.3s ease,
+      transform 0.3s ease;
+  }
+
+  .navbar-menu a:hover {
+    background-color: #4b5563; /* Lighter gray */
+    transform: scale(1.05); /* Slightly enlarge on hover */
+  }
+
+  .menu-toggle {
+    display: none;
+    flex-direction: column;
+    cursor: pointer;
+    gap: 6px;
+  }
+
+  .menu-toggle span {
+    height: 3px;
+    width: 30px;
+    background-color: white;
+    border-radius: 2px;
+    transition:
+      transform 0.3s ease,
+      background-color 0.3s ease;
+  }
+
+  /* Animations for Hamburger */
+  .menu-toggle:hover span {
+    background-color: #9ca3af; /* Gray on hover */
+  }
+
+  .menu-toggle span:nth-child(1) {
+    transform-origin: top left;
+  }
+  .menu-toggle span:nth-child(3) {
+    transform-origin: bottom left;
+  }
+
+  .menu-toggle.open span:nth-child(1) {
+    transform: rotate(45deg);
+  }
+  .menu-toggle.open span:nth-child(2) {
+    opacity: 0;
+  }
+  .menu-toggle.open span:nth-child(3) {
+    transform: rotate(-45deg);
+  }
+
+  /* Mobile Styles */
+  @media (max-width: 768px) {
+    .navbar-menu {
+      position: fixed; /* Make it appear under the navbar */
+      top: 60px; /* Reserve space for the navbar */
+      left: 0;
+      width: 100%; /* Full width */
+      height: calc(100% - 60px); /* Full height minus navbar height */
+      flex-direction: column;
+      background-color: #1f2937; /* Dark gray background */
+      padding: 30px 20px;
+      gap: 25px; /* Larger gaps between items */
+      border-radius: 0; /* No border radius for full screen */
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+      justify-content: center; /* Center items vertically */
+      align-items: center; /* Center items horizontally */
+      opacity: 0;
+      transform: translateY(-20px);
+      pointer-events: none;
+      z-index: 999; /* Ensure it's above other content but below the navbar */
+    }
+
+    .navbar-menu.active {
+      opacity: 1;
+      transform: translateY(0);
+      pointer-events: all;
+    }
+
+    .navbar-menu a {
+      font-size: 1.5em; /* Larger text for mobile */
+      padding: 15px 20px; /* Larger padding for better touch area */
+    }
+
+    .menu-toggle {
+      display: flex;
+      z-index: 1000; /* Keep it above the menu */
+    }
+  }
+</style>

@@ -1,0 +1,121 @@
+---
+
+---
+
+<section class="hero">
+  <div class="hero-home">
+    <div class="hero-content">
+      <h1>El Sabor de nuestra Tierra, Más cerca de Ti.</h1>
+      <p>
+        Más de 30 años elaborando quesos artesanales con amor y dedicación para
+        la comunidad local y nuestros queridos nicaragüenses alrededor del
+        mundo.
+      </p>
+      <div class="hero-buttons">
+        <a href="#productos" class="btn-primary">Lleva el Sabor de Casa</a>
+        <a href="#nosotros" class="btn-secondary">Conócenos</a>
+      </div>
+    </div>
+    <div class="hero-image">
+      <img src="hero-image.jpg" alt="Granja con vacas y productos lácteos" />
+    </div>
+  </div>
+</section>
+
+<style>
+  /* Hero Section */
+  .hero {
+    display: flex;
+    /* padding: 50px 15%; */
+    min-height: 100vh;
+    background-color: #fcfbf7;
+  }
+
+  .hero::after {
+    content: '';
+    background-image: url('home.jpg');
+    background-size: cover;
+    position: absolute;
+    padding: 50px 0;
+    height: 100%;
+    top: 0px;
+    right: 0px;
+    bottom: 0px;
+    left: 0px;
+    opacity: 0.3;
+    filter: opacity(0.5) brightness(1) contrast(1);
+  }
+
+  .hero-home {
+    position: absolute;
+    z-index: 100;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    min-height: 100vh;
+    padding: 0 15%;
+  }
+
+  .hero-content {
+    max-width: 50%;
+  }
+
+  .hero-content h1 {
+    font-size: 3rem;
+    color: #2d3748;
+    margin-bottom: 20px;
+  }
+
+  .hero-content p {
+    font-size: 1.2rem;
+    color: #4a5568;
+    margin-bottom: 30px;
+    line-height: 1.6;
+  }
+
+  .hero-buttons {
+    display: flex;
+    gap: 20px;
+  }
+
+  .btn-primary {
+    background-color: #3182ce;
+    color: white;
+    text-decoration: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    font-size: 1rem;
+    transition: background-color 0.3s ease;
+  }
+
+  .btn-primary:hover {
+    background-color: #2b6cb0;
+  }
+
+  .btn-secondary {
+    background-color: white;
+    color: #3182ce;
+    text-decoration: none;
+    padding: 10px 20px;
+    border: 2px solid #3182ce;
+    border-radius: 5px;
+    font-size: 1rem;
+    transition:
+      background-color 0.3s ease,
+      color 0.3s ease;
+  }
+
+  .btn-secondary:hover {
+    background-color: #3182ce;
+    color: white;
+  }
+
+  .hero-image {
+    max-width: 40%;
+  }
+
+  .hero-image img {
+    width: 100%;
+    border-radius: 10px;
+  }
+</style>
